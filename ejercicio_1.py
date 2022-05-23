@@ -32,7 +32,7 @@ def today_weather(city, code):
     
 city,code = input('City,City code: ').split(',')
 
-if re.match("^[A-Za-z]+$", x) and re.match("^[A-Za-z]{2,3}$", y):
+if re.match("^[A-Za-z]+$", city) and re.match("^[A-Za-z]{2,3}$", code):
     print('Possibly you have entered the data wrong, put the name of the country followed by a comma and the country code without spaces')
 else:
     today_weather(city, code)
