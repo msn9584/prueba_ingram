@@ -29,7 +29,7 @@ def five_days_forecast(city, code, number_days = 1):
         print('Weather: ' + fecha['Day']['IconPhrase'])
         print('Temperature: ' + str(round(((fecha['Temperature']['Maximum']['Value'] + fecha['Temperature']['Minimum']['Value'])/2 - 32) / 1.8, 1)) + ' Cº')
         
-city,code = input('City,City code,n_days: ').split(',')
+city,code = input('City,City code: ').split(',')
 
 number_day = input('Number of days for the forecast (default = 1): ')
 if not number_day.isdigit():
