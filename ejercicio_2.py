@@ -37,7 +37,7 @@ if not number_day.isdigit():
 else:
     number_day = number_day
 
-if not re.match("^[A-Za-z]+$", city) and re.match("^[A-Za-z]{2,3}$", code) and re.match("[0-5]+", number_day):
-    print('Possibly you have entered the data wrong, put the name of the country followed by a comma, the country code without spaces followed by a comma and the number of days (max 5 days)')
+if not re.match("^[A-Za-z]+$", city) and re.match("^[A-Za-z]{2,3}$", code) and re.match("[1-5]+", number_day):
+    print('Possibly you have entered the data wrong, put the name of the country followed by a comma and the country code without spaces. And the number without spaces have to be beetween 1 and 5')
 else:
     five_days_forecast(city, code, int(number_day))
