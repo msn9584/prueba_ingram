@@ -29,7 +29,13 @@ def five_days_forecast(city, code, number_days = 1):
         print('Weather: ' + fecha['Day']['IconPhrase'])
         print('Temperature: ' + str(round(((fecha['Temperature']['Maximum']['Value'] + fecha['Temperature']['Minimum']['Value'])/2 - 32) / 1.8, 1)) + ' Cº')
         
-city,code,number_day = input('City,City code,n_days: ').split(',')
+city,code = input('City,City code,n_days: ').split(',')
+
+number_day = input('Number of days for the forecast (default = 1): ')
+if not number_day.isdigit():
+    number_day = 1
+else:
+    number_day = number_day
 
 if not re.match("^[A-Za-z]+$", city) and re.match("^[A-Za-z]{2,3}$", code) and re.match("[0-5]+", number_day):
     print('Possibly you have entered the data wrong, put the name of the country followed by a comma, the country code without spaces followed by a comma and the number of days (max 5 days)')
